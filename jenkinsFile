@@ -2,17 +2,10 @@ pipeline{
 
   agent any
 
-  stages{
-  
-    stage("cd file"){
-      steps{
-        sh 'cd pet_clinic'
-      }
-    }
-    
+  stages{   
     stage("run"){
       steps{
-        sh './mvnw package'     
+        sh './mvn clean package'     
       }
     }
     
