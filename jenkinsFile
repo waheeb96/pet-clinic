@@ -1,0 +1,25 @@
+pipeline{
+
+  agent any
+
+  stages{
+  
+    stage("cd file"){
+      steps{
+        sh 'cd spring-petclinic'
+      }
+    }
+    
+    stage("run"){
+      steps{
+        sh './mvnw package'     
+      }
+    }
+    
+    stage("save artifacts"){
+      steps{
+        archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false      
+      }
+    }      
+  }
+}
