@@ -2,13 +2,16 @@ pipeline{
 
   agent any
 
-  stages{   
+  stages{ 
+  
+  //
     stage("run"){
       steps{
         sh 'mvn clean package'     
       }
     }
     
+    //
     stage("save artifacts"){
       steps{
         archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false      
