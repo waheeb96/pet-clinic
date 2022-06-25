@@ -6,7 +6,7 @@ pipeline{
   
     stage("cd file"){
       steps{
-        sh 'cd spring-petclinic'
+        sh 'cd pet_clinic'
       }
     }
     
